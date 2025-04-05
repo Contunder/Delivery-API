@@ -1,5 +1,5 @@
 
-# User API
+# Delivery API
 
 ## Feature
 
@@ -12,14 +12,13 @@
 ## Need for work
 
 - AuthenticationAPI : https://github.com/Contunder/Authentication
-- TrackingAPI : https://github.com/Contunder/Tracking
+- UserAPI : https://github.com/Contunder/Tracking
 
 ## Coverage 
 
 ## Links 
 - Github  
-  - Back End Java API : https://github.com/Contunder/UserAPI  
-  - Front End React : https://github.com/Contunder/SupHotelReact  
+  - Back End Java API : https://github.com/Contunder/UserAPI
   
 
 - Docker

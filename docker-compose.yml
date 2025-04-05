@@ -6,10 +6,10 @@ services:
     image: mysql:5.7
     container_name: UserDB
     environment:
-      MYSQL_ROOT_PASSWORD: KMPCube
-      MYSQL_DATABASE: CUBE_KMP
-      MYSQL_USER: KMPCube
-      MYSQL_PASSWORD: KMPCube
+      MYSQL_ROOT_PASSWORD: Kilabilon258!
+      MYSQL_DATABASE: Delivery
+      MYSQL_USER: API
+      MYSQL_PASSWORD: Kilabilon258!
     ports:
       - "3306:3307"
     volumes:
@@ -17,7 +17,7 @@ services:
   phpmyadmin:
     platform: linux/amd64
     image: phpmyadmin/phpmyadmin
-    container_name: UserPMA
+    container_name: DeliveryPMA
     links:
       - mysqldb
     environment:
@@ -29,14 +29,14 @@ services:
       - 8081:81
   cubeapi:
     platform: linux/amd64
-    image: valden01/user
+    image: valden01/delivery
     ports:
       - 8081:8081
     environment:
       DB_SERVER: mysqldb
-      DB_NAME: CUBE_KMP
-      DB_USERNAME: KMPCube
-      DB_PASSWORD: KMPCube
+      DB_NAME: Delivery
+      DB_USERNAME: API
+      DB_PASSWORD: Kilabilon258!
     depends_on:
       - mysqldb
 volumes:

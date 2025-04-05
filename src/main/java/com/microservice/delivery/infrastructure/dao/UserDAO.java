@@ -1,7 +1,6 @@
 package com.microservice.delivery.infrastructure.dao;
 
 import com.microservice.delivery.JsonBodyHandler;
-import com.microservice.delivery.application.security.JwtAuthenticationFilter;
 import com.microservice.delivery.infrastructure.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -15,13 +14,11 @@ import java.util.concurrent.ExecutionException;
 public class UserDAO {
 
     private final HttpClient client;
-    private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
     @Value("${user.get}")
     private String userUrl;
 
-    public UserDAO(JwtAuthenticationFilter jwtAuthenticationFilter) {
-        this.jwtAuthenticationFilter = jwtAuthenticationFilter;
+    public UserDAO() {
         this.client = HttpClient.newHttpClient();
     }
 
@@ -45,6 +42,6 @@ public class UserDAO {
         }
 
         return userEntity;
-
     }
+
 }

@@ -50,7 +50,7 @@ public class DeliveryAdapter implements DeliveryPort {
     public Delivery createDelivery(Delivery delivery, String trackingEvent, String token) {
         UserEntity user = userDAO.getActualUser(token);
 
-        Delivery newDelivery =  trackingAdapter.sendTrackingEvent(
+        Delivery newDelivery = trackingAdapter.sendTrackingEvent(
                 deliveryEntityMapper.mapToModel(
                         deliveryDAO.save(
                                 deliveryEntityMapper.mapToEntity(delivery, user)
@@ -172,7 +172,7 @@ public class DeliveryAdapter implements DeliveryPort {
     }
 
     private static boolean isNotAtMaxCapacity(Optional<TransportEntity> optionalTransportEntity) {
-        return optionalTransportEntity.isPresent() && optionalTransportEntity.get().getVehicleMaxCapacity() == optionalTransportEntity.get().getVehicleActualCapacity();
+        return optionalTransportEntity.isPresent() && optionalTransportEntity.get().getVehicleMaxCapacity() <= optionalTransportEntity.get().getVehicleActualCapacity();
     }
 
     private static boolean isNewValidation(Optional<TransportEntity> optionalTransportEntity, DeliveryEntity deliveryEntity) {
