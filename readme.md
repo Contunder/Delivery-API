@@ -3,29 +3,24 @@
 
 ## Feature
 
-- CRUD User
-- User Management
-- CRUD User
+- CRUD Delivery
+- Delivery Management
 - Github Action
 - Docker
 
 ## Need for work
 
 - AuthenticationAPI : https://github.com/Contunder/Authentication
-- UserAPI : https://github.com/Contunder/Tracking
-
-## Coverage 
+- UserAPI : https://github.com/Contunder/UserAPI
 
 ## Links 
 - Github  
-  - Back End Java API : https://github.com/Contunder/UserAPI
+  - Back End Java API : https://github.com/Contunder/Delivery-API
   
 
 - Docker
-  - Docker Back : docker push valden01/suphotelapi:tagname  
-    - Back Port Mapping : 8080
-  - Docker Front : docker push valden01/suphotelreact:tagname
-    - Front Port Mapping : 3000
+  - Docker Back : docker push valden01/delivery:tagname  
+    - Back Port Mapping : 8082
 
 ## For Use
 
@@ -37,14 +32,6 @@
 - In /src/main/resources/application.properties
 - Change spring.datasource with your config 
 - The Database will be automaticly create at first launch
-- Add Role in the table
-
->ROLE_USER  
->ROLE_ADMIN
-
-- If you have any problems you can't change acces in SecurityConfig 
-
-> .anyRequest().authenticated() -> .anyRequest().permitAll()
 
 ## Config project install
 
@@ -52,26 +39,4 @@
 
 ## SWAGGER AT 
 
-- http://localhost:8080/
-
-## PostMan files
-
-- SupHotel.postman_collection.json
-
-## Comment déployer sur Azure :
-
-
-Avec le plug-in Maven pour Azure Web Apps.
-
-une seule commande à la racine de votre projet :
-
-
->mvn com.microsoft.azure:azure-webapp-maven-plugin:2.11.0:config
-
-
-puis ensuite déployer l’appli:
-
-
->mvn package azure-webapp:deploy
-
-
+- http://localhost:8082/
